@@ -15,7 +15,8 @@
 										<h5 class="card-title">{{ $product['title'] }}</h5>
 										<p class="card-text">{{ $product['description'] }}</p>
 										<p class="card-text"><small class="text-muted">Price: Rp{{ number_format(($product['price'] * 15000),2,',','.'); }}</small></p>
-										<a href="#" class="btn btn-primary">Add to Cart</a>
+										<!-- <a href="#" class="btn btn-primary cart-btn"></a> -->
+										<button type="submit" class="btn btn-primary cart-btn" onclick="counter()">Add to Cart</button>
 									</div>
 								</div>
 							</div>

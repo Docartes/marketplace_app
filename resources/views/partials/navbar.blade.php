@@ -13,9 +13,9 @@
           <a class="nav-link" href="#product">Products</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link position-relative" href="#">
+          <a class="nav-link position-relative" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
             <i class="bi bi-cart"></i>
-            <span class="position-absolute top-10 start-100 translate-middle badge rounded-pill bg-danger">
+            <span class="position-absolute top-10 start-100 translate-middle badge rounded-pill bg-danger" id="cart-counter">
               0
               <span class="visually-hidden">unread messages</span>
             </a>
