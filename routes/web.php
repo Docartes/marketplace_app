@@ -15,7 +15,7 @@ use App\Http\Controllers\ProductController;
 */
 
 Route::get('/', function () {
-    return view('home', ["title" => "Home", "products" => ProductController::getProduct()]);
+    return view('home/product', ["title" => "Home", "products" => ProductController::getProduct()]);
 });
 
 // Route::get('/home', function() {
