@@ -27,89 +27,94 @@
             <a class="nav-link" href="#product">Products</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-disabled="true"><i class="bi bi-cart"></i></a>
-          </li>
-        </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
-        </form>
-      </div>
-    </div>
-  </nav>
-
-
-  <main class="m-4">
-    <div class="container">
-      <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active" data-bs-interval="10000">
-            <img src="{{ asset('banner/1.png') }}" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item" data-bs-interval="10000">
-            <img src="{{ asset('banner/2.png') }}" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item" data-bs-interval="10000">
-            <img src="{{ asset('banner/3.png') }}" class="d-block w-100" alt="...">
-          </div>
+            <a class="nav-link position-relative" href="#">
+              <i class="bi bi-cart"></i>
+              <span class="position-absolute top-10 start-100 translate-middle badge rounded-pill bg-danger">
+                99+
+                <span class="visually-hidden">unread messages</span>
+              </a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
+          </form>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
       </div>
-    </div>
+    </nav>
 
 
-    <div class="jumbotron p-4" id="product" style="font-family: Geologica">
-      <div class="produk">
-        <div class="container">
-          <h1 class="display-3 mb-4">Produk Kami</h1>
-          <div class="row">
-            @foreach ( $products as $product )
-            @if ( $product['category'] == 'electronics' )
-            <div class="card mb-3 mx-2" style="max-width: 540px;">
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img src="{{ $product['image'] }}" class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title">{{ $product['title'] }}</h5>
-                    <p class="card-text">{{ $product['description'] }}</p>
-                    <p class="card-text"><small class="text-muted">Price: Rp{{ number_format(($product['price'] * 15000),2,',','.'); }}</small></p>
-                    <a href="#" class="btn btn-primary">Add to Cart</a>
+    <main class="m-4">
+      <div class="container">
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+              <img src="{{ asset('banner/1.png') }}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="10000">
+              <img src="{{ asset('banner/2.png') }}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="10000">
+              <img src="{{ asset('banner/3.png') }}" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+
+
+      <div class="jumbotron p-4" id="product" style="font-family: Geologica">
+        <div class="produk">
+          <div class="container">
+            <h1 class="display-3 mb-4">Produk Kami</h1>
+            <div class="row">
+              @foreach ( $products as $product )
+              @if ( $product['category'] == 'electronics' )
+              <div class="card mb-3 mx-2" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="{{ $product['image'] }}" class="img-fluid rounded-start" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ $product['title'] }}</h5>
+                      <p class="card-text">{{ $product['description'] }}</p>
+                      <p class="card-text"><small class="text-muted">Price: Rp{{ number_format(($product['price'] * 15000),2,',','.'); }}</small></p>
+                      <a href="#" class="btn btn-primary">Add to Cart</a>
+                    </div>
                   </div>
                 </div>
               </div>
+              @endif
+              @endforeach
             </div>
-            @endif
-            @endforeach
           </div>
         </div>
       </div>
-    </div>
-  </main>
+    </main>
 
-  <footer class="bg-body-tertiary text-center text-lg-start" style="font-family: Manrope">
-    <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-      © 2024 Copyright:
-      <a class="text-body link-underline link-underline-opacity-0" href="">Kelompok 1</a>
-    </div>
-    <!-- Copyright -->
-  </footer>
-
+    <footer class="bg-body-tertiary text-center text-lg-start" style="font-family: Manrope">
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2024 Copyright:
+        <a class="text-body link-underline link-underline-opacity-0" href="">Kelompok 1</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
 
 
 
 
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-</body>
-</html>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  </body>
+  </html>
