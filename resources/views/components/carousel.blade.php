@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="padding-top: 80px">
 	<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
 		<div class="carousel-inner">
 			<div class="carousel-item active" data-bs-interval="10000">

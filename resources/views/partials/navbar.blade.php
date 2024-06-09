@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary" style="font-family: Manrope;">
+<nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary mb-4" style="font-family: Manrope;">
   <div class="container">
     <a class="navbar-brand" href="#home">SuperTech</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

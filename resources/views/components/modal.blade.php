@@ -1,4 +1,4 @@
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="font-family: Manrope">
+<div class="modal modal-lg fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="font-family: Manrope">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -7,10 +7,12 @@
       </div>
       <div class="modal-body">
         
+        <div class="total" id="total"></div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Checkout</button>
+        <!-- <a href="" target="__blank__" class="btn btn-primary checkout">Checkout</a> -->
+        <button type="button" class="btn btn-primary checkout">Checkout</button>
       </div>
     </div>
   </div>
