@@ -5,13 +5,13 @@
 			<div class="row">
 				@foreach ( $products as $product )
 					@if ( $product['category'] == 'electronics' )
-						<div class="card mb-3 mx-2" style="max-width: 540px;">
+						<div class="card mb-3 mx-2 products" style="max-width: 540px;">
 							<div class="row g-0">
 								<div class="col-md-4">
 									<img src="{{ $product['image'] }}" class="img-fluid rounded-start img" alt="...">
 								</div>
 								<div class="col-md-8">
-									<div class="card-body products">
+									<div class="card-body">
 										<h5 class="card-title title">{{ $product['title'] }}</h5>
 										<p class="card-text">{{ $product['description'] }}</p>
 										<p class="card-text price"><small class="text-muted">Price: Rp{{ number_format(($product['price'] * 15000)); }}</small></p>

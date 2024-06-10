@@ -2,13 +2,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchBtn = document.querySelector(".search");
   const searchInput = document.querySelector(".search-input");
   const cartBtn = document.querySelectorAll(".cart-btn");
-  const products = document.querySelectorAll(".title");
+  const productItems = document.querySelectorAll(".products");
   const price = document.querySelectorAll(".price");
   const modalBody = document.querySelector(".modal-body");
   const cartCounter = document.getElementById("cart-counter");
   const checkoutBtn = document.querySelector(".checkout")
   let totalPrice = 0;
   let items = [];
+  let products = [];
   let count = 0;
 
   const formatCurrency = (value, locale, currency) => {
@@ -25,6 +26,25 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
   };
 
+  searchInput.addEventListener("input", (e) => {
+    const value = e.target.value.toLowerCase();
+
+    products.forEach((product) => {
+      const isVisible = product.title.includes(value);
+      productItems.element.classList.toggle("d-none", !isVisible)
+    })
+  });
+
+  fetch("https://fakestoreapi.com/products/category/electronics")
+  .then(res => res.json())
+  .then(data => {
+    products = data.map(product => {
+      return { title: product.title, price: product.price };
+    })
+  })  
+
+
+
   const checkout = () => {
   	const currency = formatCurrency(totalPrice, "id-ID", "IDR");
   	const data = items.map((elem, index) => {return `${index + 1}. ${elem.title} - ${formatCurrency(elem.price, "id-ID", "IDR")}%0D%0A`})
@@ -32,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   checkoutBtn.addEventListener("click", () => {
-  	checkout()
+  	checkout();
   })
 
   for (let i = 0; i < cartBtn.length; i++) {
