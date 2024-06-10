@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchBtn = document.querySelector(".search");
   const searchInput = document.querySelector(".search-input");
   const cartBtn = document.querySelectorAll(".cart-btn");
-  const productItems = document.querySelectorAll(".products");
+  const cards = document.querySelectorAll(".card");
   const price = document.querySelectorAll(".price");
   const modalBody = document.querySelector(".modal-body");
   const cartCounter = document.getElementById("cart-counter");
@@ -29,19 +29,15 @@ document.addEventListener('DOMContentLoaded', () => {
   searchInput.addEventListener("input", (e) => {
     const value = e.target.value.toLowerCase();
 
-    products.forEach((product) => {
-      const isVisible = product.title.includes(value);
-      productItems.element.classList.toggle("d-none", !isVisible)
-    })
-  });
-
-  fetch("https://fakestoreapi.com/products/category/electronics")
-  .then(res => res.json())
-  .then(data => {
-    products = data.map(product => {
-      return { title: product.title, price: product.price };
-    })
-  })  
+    for ( let i = 0; i < cards.length; i++ ) {
+      let data = cards[i].childNodes[1].childNodes[3].childNodes[1].childNodes[1].innerText.toLowerCase();
+      if (data.includes(value) !== true) {
+        cards[i].classList.add("d-none")
+      } else {
+        cards[i].classList.remove("d-none")
+      }
+    }
+  }); 
 
 
 
