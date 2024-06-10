@@ -1,9 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const searchBtn = document.querySelector(".search");
+  const searchInput = document.querySelector(".search-input");
   const cartBtn = document.querySelectorAll(".cart-btn");
   const products = document.querySelectorAll(".title");
   const price = document.querySelectorAll(".price");
   const modalBody = document.querySelector(".modal-body");
-  const total = document.querySelector('.total');
   const cartCounter = document.getElementById("cart-counter");
   const checkoutBtn = document.querySelector(".checkout")
   let totalPrice = 0;
@@ -19,18 +20,15 @@ document.addEventListener('DOMContentLoaded', () => {
     modalBody.innerHTML += `
       <div class="d-flex justify-content-between">
         <p>${title}</p>
-        <p>Rp${price}</p>
+        <p>${price}</p>
       </div>
     `;
-    
-    // Update the total price
-    total.innerHTML = `Total: Rp${totalPrice.toLocaleString()}`;
   };
 
   const checkout = () => {
   	const currency = formatCurrency(totalPrice, "id-ID", "IDR");
-  	const data = items.map((elem, index) => {return `${index + 1}. ${elem.title} - ${formatCurrency(elem.price, "id-ID", "IDR")} %0D%0A `})
-  	window.open(`https://wa.me/YOUR_NUMBER?text=${data} %0D%0A Total: ${currency}`, "_blank").focus()
+  	const data = items.map((elem, index) => {return `${index + 1}. ${elem.title} - ${formatCurrency(elem.price, "id-ID", "IDR")}%0D%0A`})
+  	window.open(`https://wa.me/YOUR_NUMBER?text=${data}%0D%0ATotal: ${currency}`, "_blank").focus()
   };
 
   checkoutBtn.addEventListener("click", () => {
@@ -48,8 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
       };
       items.push(item);
       totalPrice += item.price;
-      addCart(item.title, item.price);
-      console.log(`Total Price: Rp${totalPrice.toLocaleString()}`);
+      addCart(item.title, formatCurrency(item.price, "id-ID", "IDR"));
     });
   }
 });
