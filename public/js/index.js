@@ -3,13 +3,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.querySelector(".search-input");
   const cartBtn = document.querySelectorAll(".cart-btn");
   const cards = document.querySelectorAll(".card");
+  const products = document.querySelectorAll(".title")
   const price = document.querySelectorAll(".price");
   const modalBody = document.querySelector(".modal-body");
   const cartCounter = document.getElementById("cart-counter");
   const checkoutBtn = document.querySelector(".checkout")
   let totalPrice = 0;
   let items = [];
-  let products = [];
   let count = 0;
 
   const formatCurrency = (value, locale, currency) => {
