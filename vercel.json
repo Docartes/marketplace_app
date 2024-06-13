@@ -13,14 +13,6 @@
         { "src": "/favicon/(.*)", "dest": "/public/favicon/" }, 
         { "src": "/(.*)", "dest": "/api/index.php" } 
     ],
-
-    "rewrites": [
-         { "src": "/resources/css/(.*)", "dest": "/resources/css" },
-        { "src": "/resources/js/(.*)", "dest": "/resources/js/" },
-        { "src": "/resources/banner/(.*)", "dest": "/resources/banner/" },
-        { "src": "/resources/SUPER/(.*)", "dest": "/resources/SUPER/" }
-    ],
-
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "true",
