@@ -1,3 +1,3 @@
 <?php
 
-require '../public/index.php';
+require '/var/task/user/public/index.php';
