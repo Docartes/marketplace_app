@@ -18,7 +18,7 @@
          { "src": "/resources/css/(.*)", "dest": "/resources/css" },
         { "src": "/resources/js/(.*)", "dest": "/resources/js/" },
         { "src": "/resources/banner/(.*)", "dest": "/resources/banner/" },
-        { "src": "/resources/SUPER/(.*)", "dest": "/resources/SUPER/" },
+        { "src": "/resources/SUPER/(.*)", "dest": "/resources/SUPER/" }
     ],
 
     "env": {
